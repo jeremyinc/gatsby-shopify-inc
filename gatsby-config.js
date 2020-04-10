@@ -1,6 +1,10 @@
-require("dotenv").config({
-	path: `.env.${process.env.NODE_ENV}`
-});
+console.log("NODE ENVIRONMENT", process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === "development") {
+	require("dotenv").config({
+		path: `.env.${process.env.NODE_ENV}`,
+	});
+}
 
 module.exports = {
 	plugins: [
@@ -8,18 +12,18 @@ module.exports = {
 			resolve: `gatsby-source-shopify`,
 			options: {
 				shopName: process.env.GATSBY_SHOP_NAME,
-				accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN
-			}
+				accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+			},
 		},
 		`gatsby-plugin-layout`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-theme-ui`,
-		`gatsby-plugin-emotion`
+		`gatsby-plugin-emotion`,
 	],
 	siteMetadata: {
 		title: "Modernist Design Books",
 		description:
-			"This is an example Gatsby Shopify site. It is meant for illustration purposes only. Please do not attempt to buy anything."
-	}
+			"This is an example Gatsby Shopify site. It is meant for illustration purposes only. Please do not attempt to buy anything.",
+	},
 };
