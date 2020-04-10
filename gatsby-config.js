@@ -1,4 +1,4 @@
-console.log("NODE ENVIRONMENT", process.env.NODE_ENV);
+console.log("NODE ENVIRONMENT", process.env.NODE_ENV, "MY ENVS", process.env);
 
 if (process.env.NODE_ENV === "development") {
 	require("dotenv").config({
