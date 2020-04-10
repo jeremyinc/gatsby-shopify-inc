@@ -1,10 +1,6 @@
-console.log("NODE ENVIRONMENT", process.env.NODE_ENV, "MY ENVS", process.env);
-
-if (process.env.NODE_ENV === "development") {
-	require("dotenv").config({
-		path: `.env.${process.env.NODE_ENV}`,
-	});
-}
+require("dotenv").config({
+	path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
 	plugins: [
